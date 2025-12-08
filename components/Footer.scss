@@ -1,0 +1,112 @@
+// Footer.scss
+
+.footer {
+  //background-color: #1a1a1a; // replace with your brand primary
+  color: #ffffff;
+  padding: 3rem 1rem;
+
+  .footer-container {
+    max-width: 1120px; // Tailwind max-w-7xl
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer-logo {
+    img {
+      height: 5rem;
+      width: auto;
+
+      @media (min-width: 768px) {
+        height: 7rem;
+      }
+    }
+  }
+
+  .footer-description {
+    color: #9ca3af; // Tailwind text-gray-400
+    font-size: 0.875rem; // text-sm
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    a {
+      color: #9ca3af;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #facc15; // text-brand-accent
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  .footer-links,
+  .footer-contact {
+    h3 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: #d1d5db; // text-gray-300
+    }
+
+    ul {
+      margin-top: 1rem;
+      li {
+        margin-bottom: 0.5rem;
+
+        a,
+        span {
+          color: #9ca3af;
+          text-decoration: none;
+          font-size: 1rem;
+
+          &:hover {
+            color: #ffffff;
+          }
+        }
+
+        .icon {
+          margin-right: 0.75rem;
+          color: #facc15;
+        }
+
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .footer-contact {
+    ul li {
+      flex-direction: row;
+      span {
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    border-top: 1px solid #374151; // border-gray-700
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #9ca3af;
+  }
+}

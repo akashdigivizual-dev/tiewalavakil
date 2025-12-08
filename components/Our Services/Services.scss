@@ -1,0 +1,121 @@
+.our-services {
+  position: relative;
+  padding: 6rem 1rem;
+  background: url("/lovable-uploads/legal-bg.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    );
+    backdrop-filter: blur(4px);
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0a2e36;
+    margin-bottom: 3rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: #c09a58;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 167, 167, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease, background-color 0.6s ease;
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-10px);
+      background: linear-gradient(
+        145deg,
+        #f1c06c,
+        rgb(233, 201, 145)
+      );
+      box-shadow: 0 12px 30px rgba(0, 167, 167, 0.25);
+      border-color: rgba(192, 154, 88, 0.3);
+    }
+
+    .icon {
+      margin-bottom: 1.2rem;
+      svg {
+        stroke: #c09a58;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .icon svg {
+      transform: scale(1.1);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #093f43;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .our-services {
+    padding: 4rem 1rem;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+    }
+  }
+}

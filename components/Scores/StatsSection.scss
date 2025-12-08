@@ -1,0 +1,66 @@
+.stats-section {
+  padding: 4rem 1rem;
+  background-color: #0f172a; // Dark primary background
+  color: #f8fafc; // Light text
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-card {
+      padding: 2rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+        @media (min-width: 1024px) {
+          font-size: 3.5rem;
+        }
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        @media (min-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Animation Keyframes
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
