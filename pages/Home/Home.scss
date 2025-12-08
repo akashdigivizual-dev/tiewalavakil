@@ -1,0 +1,363 @@
+.practice-area-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.5rem);
+  }
+
+  .icon-container {
+    color: var(--brand-accent);
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #4b5563;
+  }
+
+  .learn-more-link {
+    color: var(--brand-accent);
+    font-weight: 600;
+    margin-top: 1rem;
+    display: inline-block;
+
+    &:hover {
+      color: var(--brand-accent-hover);
+    }
+  }
+}
+
+.why-choose-us-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 9999px;
+    background-color: var(--brand-accent);
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    font-family: var(--font-serif);
+  }
+
+  p {
+    margin-top: 0.5rem;
+    color: #4b5563;
+  }
+}
+
+.owner-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2; // stays above hero background
+
+  img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px; // smooth corners
+    border: 5px solid rgb(178, 217, 232); // subtle white border
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); // soft depth shadow
+    transition: transform 0.4s ease, box-shadow 0.4s ease; // smooth hover
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+      transform: scale(1.05); // zoom in slightly
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .experience-badge {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    background-color: var(--brand-primary, #1a365d);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 3;
+    font-size: medium;
+
+    @media (min-width: 768px) {
+      bottom: -16px;
+      right: -16px;
+      padding: 1rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 700;
+
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+
+      @media (min-width: 768px) {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+  }
+}
+
+.home-container {
+  .hero-section {
+    position: relative;
+    background-color: var(--brand-primary);
+    color: white;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      padding-top: 50px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background: #6f905582;
+    }
+
+    .hero-content {
+      //   color: black;
+      //   position: relative;
+      //   max-width: 80rem;
+      //   margin: 0 auto;
+      //   padding: 0 1rem;
+      color: black;
+      position: relative;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 4rem 1rem; /* more breathing space */
+      text-align: center; /* centers text and inner elements */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1; /* keeps above background */
+
+      .logo-container {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+
+        .logo-image {
+          max-width: 200px;
+          height: auto;
+          filter: brightness(0) invert(1); // This makes the logo white for better visibility on dark background
+        }
+      }
+
+      @media (min-width: 640px) {
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 0 2rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        font-family: var(--font-serif);
+        font-weight: 800;
+        letter-spacing: -0.025em;
+
+        @media (min-width: 768px) {
+          font-size: 3.75rem;
+          line-height: 1;
+        }
+      }
+
+      p {
+        margin-top: 1.5rem;
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        color: rgb(0, 13, 85);
+
+        @media (min-width: 768px) {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+      }
+
+      .cta-container {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        @media (min-width: 640px) {
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        .secondary-cta {
+          color: white;
+          font-weight: 700;
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.5rem;
+          background-color: transparent;
+          border: 2px solid white;
+          transition: background-color 0.3s, color 0.3s;
+
+          &:hover {
+            background-color: white;
+            color: var(--brand-primary);
+          }
+        }
+      }
+    }
+  }
+
+//   .practice-areas-section {
+//     padding: 4rem 0;
+//     background-color: var(--brand-light);
+
+//     @media (min-width: 640px) {
+//       padding: 6rem 0;
+//     }
+
+//     .section-content {
+//       max-width: 80rem;
+//       margin: 0 auto;
+//       padding: 0 1rem;
+
+//       @media (min-width: 640px) {
+//         padding: 0 1.5rem;
+//       }
+
+//       @media (min-width: 1024px) {
+//         padding: 0 2rem;
+//       }
+//     }
+
+//     .section-header {
+//       text-align: center;
+
+//       h2 {
+//         font-size: 1.875rem;
+//         line-height: 2.25rem;
+//         font-family: var(--font-serif);
+//         font-weight: 700;
+//         color: var(--brand-primary);
+
+//         @media (min-width: 640px) {
+//           font-size: 2.25rem;
+//           line-height: 2.5rem;
+//         }
+//       }
+
+//       p {
+//         margin-top: 1rem;
+//         max-width: 42rem;
+//         margin-left: auto;
+//         margin-right: auto;
+//         font-size: 1.125rem;
+//         line-height: 1.75rem;
+//         color: #4b5563;
+//       }
+//     }
+    
+//     .cards-grid {
+//       margin-top: 3rem;
+//       display: grid;
+//       gap: 2rem;
+//       color: #c09a58;
+
+//       @media (min-width: 768px) {
+//         grid-template-columns: repeat(2, 1fr);
+//       }
+
+//       @media (min-width: 1024px) {
+//         grid-template-columns: repeat(3, 1fr);
+//       }
+//     }
+//   }
+
+  .why-choose-us-section {
+    padding: 4rem 0;
+    background-color: white;
+
+    @media (min-width: 640px) {
+      padding: 0;
+    }
+
+    .section-content {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      @media (min-width: 640px) {
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 0 2rem;
+      }
+    }
+
+    .items-grid {
+      margin-top: 4rem;
+      display: grid;
+      gap: 3rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

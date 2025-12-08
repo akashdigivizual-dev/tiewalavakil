@@ -1,0 +1,156 @@
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  color: #c09a58; // ✅ Main theme color
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, #ffffff40, transparent 60%);
+    z-index: 1;
+  }
+
+  .hero-section img {
+    transition: transform 0.8s ease;
+  }
+  .hero-section img:hover {
+    transform: scale(1.05) rotateY(8deg);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-top: 1rem;
+      color: #1a1a1a; // neutral black for contrast
+      text-shadow: 0 4px 20px rgba(192, 154, 88, 0.3); // subtle gold glow
+    }
+
+    p {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+      color: #8a6b2d; // muted gold for body text
+      max-width: 700px;
+      line-height: 1.75rem;
+    }
+
+    .cta-container {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .secondary-cta {
+        color: #c09a58;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        background: transparent;
+        border: 2px solid #c09a58;
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          background: #c09a58;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .owner-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      border: 4px solid #c09a58;
+      box-shadow: 0 8px 25px rgba(192, 154, 88, 0.4); // soft gold glow
+      transition: transform 0.4s ease;
+      z-index: 2;
+
+      &:hover {
+        transform: scale(1.05) rotateY(5deg);
+      }
+    }
+
+    .experience-badge {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      background-color: #c09a58; // ✅ theme color
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(192, 154, 88, 0.5);
+      font-weight: bold;
+      z-index: 3;
+
+      h2 {
+        font-size: 1.75rem;
+        margin: 0;
+      }
+
+      p {
+        font-size: 0.875rem;
+        margin: 0;
+      }
+    }
+  }
+
+  /* Floating glow animations for depth */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: floatGlow 8s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+
+  &::before {
+    top: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(192, 154, 88, 0.4), transparent);
+  }
+
+  &::after {
+    bottom: -100px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(192, 154, 88, 0.5), transparent);
+    animation-delay: 2s;
+  }
+
+  @keyframes floatGlow {
+    from {
+      transform: translateY(0px) translateX(0px);
+    }
+    to {
+      transform: translateY(40px) translateX(40px);
+    }
+  }
+}
+  

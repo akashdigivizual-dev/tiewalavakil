@@ -1,0 +1,139 @@
+.consultation-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+
+  .section-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.5px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, #c09a58, #b88327);
+      margin: 0.6rem auto 0;
+      border-radius: 3px;
+      animation: underline-glow 3s infinite ease-in-out;
+    }
+  }
+
+  .grid-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    justify-items: center;
+  }
+
+  .consultation-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform: translateY(0);
+
+    &:hover {
+      border-color: #6366f1;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px #c09a58;
+
+      .icon-wrapper {
+        animation: rotate 1s linear;
+      }
+    }
+
+    .icon-wrapper {
+      background: linear-gradient(135deg, #c09a58, #af791c);
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      color: white;
+      transition: transform 0.5s ease;
+
+      .icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      min-height: 40px;
+    }
+
+    .card-info {
+      .duration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: #475569;
+        margin-bottom: 0.5rem;
+
+        .clock-icon {
+          width: 18px;
+          height: 18px;
+          margin-right: 0.4rem;
+        }
+      }
+
+      .price {
+        font-size: 1.6rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+/* 🔹 Animations */
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes underline-glow {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    opacity: 0.5;
+  }
+}
