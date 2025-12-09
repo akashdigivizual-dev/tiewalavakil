@@ -1,0 +1,161 @@
+.consultation-section {
+  background: linear-gradient(135deg, #f7f9fb, #eef2f7);
+  padding: 5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .form-card {
+    background: #fff;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    animation: fadeInUp 0.8s ease;
+
+    .form-title {
+      font-size: 2rem;
+      color: #c09a58;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #c09a58;
+        margin: 0.5rem auto 0;
+        border-radius: 2px;
+        animation: slideIn 1s ease;
+      }
+    }
+
+    .secure-payment {
+      background: #e0f2fe;
+      border-left: 4px solid #2563eb;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #1e40af;
+
+      .secure-header {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+
+        .icon {
+          margin-right: 8px;
+          stroke: #1d4ed8;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #1d4ed8;
+      }
+    }
+
+    .consultation-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: 600;
+          color: #1f2937;
+          margin-bottom: 0.3rem;
+        }
+
+        input,
+        select,
+        textarea {
+          border: 1px solid #d1d5db;
+          border-radius: 0.5rem;
+          padding: 0.6rem 0.75rem;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          background-color: #f9fafb;
+
+          &:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+            background: #fff;
+          }
+        }
+
+        textarea {
+          resize: none;
+        }
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, blue, rgb(7, 7, 121));
+        color: #fff;
+        font-weight: 600;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.6rem;
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: linear-gradient(135deg, blue, rgb(0, 0, 255));
+          transform: translateY(-3px);
+          box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
+        }
+
+        .icon {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}
+
+//  Animations
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 60px;
+    opacity: 1;
+  }
+}

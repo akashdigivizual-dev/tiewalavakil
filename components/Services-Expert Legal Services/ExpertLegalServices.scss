@@ -1,0 +1,92 @@
+.expert-legal-services {
+  padding: 4rem 1rem;
+  background: linear-gradient(120deg, #f7f9fc, #e0f2ff);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #c09a58;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #c09a58;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 120px;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(192, 154, 88, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(192, 154, 88, 0.4);
+
+      .service-icon {
+        transform: rotate(15deg) scale(1.2);
+        color: #2ecc71;
+      }
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .service-icon {
+        width: 36px;
+        height: 36px;
+        color: #2ecc71;
+        margin-right: 1rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .service-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0d3b66;
+      }
+    }
+
+    .service-description {
+      font-size: 0.95rem;
+      color: #5a5a5a;
+      line-height: 1.6;
+    }
+  }
+}
